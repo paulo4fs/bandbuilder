@@ -36,8 +36,9 @@ CREATE DATABASE database_name;
 CREATE TABLE table-name (column_1 datatype, column_2 datatype, column_3 datatype);
 
 CREATE TABLE users (
-id BIGSERIAL PRIMARY KEY,
+id BIGSERIAL PRIMARY KEY NOT NULL,
 name VARCHAR(50) NOT NULL,
+avatar VARCHAR(100) NOT NULL,
 phone VARCHAR(15) UNIQUE NOT NULL,
 instrument VARCHAR(20) NOT NULL
 );
@@ -54,8 +55,8 @@ CREATE TABLE users (name text, age smallint, birthday date);
 INSERT INTO table_name (column_1, column_2, column_3) VALUES (value_1, ’value_2’, value_3);
 
 #### ex:
-INSERT INTO users (name ,phone , instrument) VALUES (‘Andrei’, ’31’,’1930-01-25’);
-INSERT INTO users (name ,phone , instrument) VALUES (‘Andrei’, ’31’,’guitar’);
+INSERT INTO users (name ,phone , instrument) VALUES (‘Andrei’, ’31’,’555513313145’);
+INSERT INTO users (name, avatar ,phone , instrument) VALUES (‘Andrei’,'aaaaa', ’31’,’guitar’);
 
 ### observar nome, idade, aniversário de um db
 

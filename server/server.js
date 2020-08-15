@@ -1,17 +1,16 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const app = express();
-const PORT = 3333;
+const userRouter = require('./routes/userRoutes');
 
-app.get('/api/v1/users/', (req, res) => {
-  res.json('this is working');
-});
+dotenv.config({ path: './.env' });
 
-app.post('/api/v1/signin', (req, res) => {
-  res.json('signed in');
-});
+const port = process.env.PORT || 3333;
 
-app.listen(PORT, () => {
-  console.log(`app is running on port ${PORT}`);
+app.use('/api/v1/users', userRouter);
+
+app.listen(port, () => {
+  console.log(`app is running on port ${port}`);
 });
 
 /*

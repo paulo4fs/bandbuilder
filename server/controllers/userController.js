@@ -1,3 +1,4 @@
+// GET ALL
 exports.getAll = (req, res) => {
   res.status(200).json({
     status: 'success',
@@ -7,24 +8,29 @@ exports.getAll = (req, res) => {
   });
 };
 
+// GET ONE
 exports.getOne =
   ('/:id',
   (req, res) => {
     res.status(200).json({
       status: 'success',
-      response: 'oiii getone',
+      data: {
+        response: 'deu bom um',
+      },
     });
   });
 
+// CREATE ONE
 exports.createOne =
   ('/:id',
   (req, res) => {
-    console.log(req);
-    res.status(200).json({
+    console.log(req.body);
+    res.status(201).json({
       status: 'success',
     });
   });
 
+// UPDATE ONE
 exports.updateOne =
   ('/:id',
   (req, res) => {
@@ -36,6 +42,7 @@ exports.updateOne =
     });
   });
 
+// DELETE ONE
 exports.deleteOne =
   ('/:id',
   (req, res) => {

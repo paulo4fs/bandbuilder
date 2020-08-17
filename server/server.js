@@ -3,19 +3,21 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 
 const userRouter = require('./routes/userRoutes');
+const db = require('./db');
 
 //MIDDLEWARES AND CONFIG
 const app = express();
 
 //ADDING BODY TO THE REQ
 app.use(express.json());
+app.use(morgan('dev'));
 
 dotenv.config({ path: './.env' });
 
 //PORT TO BE USED
 const port = process.env.PORT || 3333;
 
-//ROUTE
+//ROUTES
 app.use('/api/v1/users', userRouter);
 
 //CONNECT

@@ -2,12 +2,11 @@ const express = require('express');
 const userController = require('../controllers/userController');
 const router = express.Router();
 
-router.get('/', userController.getAll);
+router.route('/').get(userController.getAll).post(userController.createOne);
 
 router
   .route('/:id')
   .get(userController.getOne)
-  .post(userController.createOne)
   .patch(userController.updateOne)
   .delete(userController.deleteOne);
 

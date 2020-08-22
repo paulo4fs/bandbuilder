@@ -1,14 +1,23 @@
 import React from 'react';
-import { Button } from './style';
+import {
+  Button,
+  ButtonContainer,
+  BackgroundContainer,
+  Container,
+} from './style';
 
 const Landing = () => {
   return (
-    <div>
-      <h1>BandBuilder</h1>
-      <h3>Forme sua banda</h3>
-      <Button>Buscar</Button>
-      <button>Anunciar</button>
-    </div>
+    <BackgroundContainer>
+      <Container>
+        <h1>BandBuilder</h1>
+        <h3>Forme sua banda</h3>
+        <ButtonContainer>
+          <Button>Buscar</Button>
+          <Button>Anunciar</Button>
+        </ButtonContainer>
+      </Container>
+    </BackgroundContainer>
   );
 };
 

@@ -18,6 +18,9 @@ export const Container = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media (max-width: 35em) {
+    font-size: 200%;
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -34,11 +37,17 @@ export const Button = styled.button`
   padding: 1.5rem;
   margin: 1.5rem 1.5rem 0 0;
   font-size: 1.8rem;
-  box-shadow: 4px 4px 15px black;
+  box-shadow: 0.4rem 0.4rem 1rem black;
   cursor: pointer;
   display: flex;
-  transition: all 1s;
+  transition: all 0.2s;
+  p {
+    margin-left: 0.5rem;
+  }
   &:hover {
-    box-shadow: 0px 0px 10px white;
+    box-shadow: 0px 0px 1rem white;
+  }
+  @media (max-width: 35em) {
+    font-size: 60%;
   }
 `;

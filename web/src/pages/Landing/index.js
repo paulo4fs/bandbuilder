@@ -1,13 +1,12 @@
 import React from 'react';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+import { ButtonComponent } from '../../components/LandingButton';
 import {
-  Button,
+  // Button,
   ButtonContainer,
   BackgroundContainer,
   Container,
-} from './styled';
+} from './style';
 
 const Landing = () => {
   return (
@@ -16,12 +15,22 @@ const Landing = () => {
         <h1>BandBuilder</h1>
         <h4>Forme sua banda</h4>
         <ButtonContainer>
-          <Button color='white' fontColor='black'>
-            <FontAwesomeIcon icon={faSearch} /> Buscar
-          </Button>
-          <Button color='#D6309D' fontColor='white'>
-            <FontAwesomeIcon icon={faStar} /> Anunciar
-          </Button>
+          <Link to='/search' style={{ textDecoration: 'none' }}>
+            <ButtonComponent
+              color='white'
+              fontColor='#D6309D'
+              text='Buscar'
+              fa='faSearch'
+            />
+          </Link>
+          <Link to='/form' style={{ textDecoration: 'none' }}>
+            <ButtonComponent
+              color='#D6309D'
+              fontColor='white'
+              text='Anunciar'
+              fa='faStar'
+            />
+          </Link>
         </ButtonContainer>
       </Container>
     </BackgroundContainer>
